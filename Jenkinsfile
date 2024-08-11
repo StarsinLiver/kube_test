@@ -1,8 +1,9 @@
 pipeline {
-    agent any
-
-    tools {
-        maven 'Maven 3.8.1'  // Global Tool Configuration에 정의된 Maven 이름 사용
+    agent {
+        docker {
+            image 'maven:3.8.1-jdk-11'  // Maven이 설치된 Docker 이미지
+            args '-v /root/.m2:/root/.m2'  // 필요에 따라 로컬 Maven 캐시 볼륨 마운트
+        }
     }
 
     environment {
