@@ -6,16 +6,16 @@ spec:
   replicas: 1           #  파드 수 정의
   selector:
     matchLabels:
-      app: hello1
+      app: hello3
       version: v1
   template:
     metadata:
       labels:
-        app: hello1
+        app: hello3
         version: v1
     spec:
       containers:
-        - name: my-java-app-1
-          image: starsinriver/my-java-app:v1
+        - name: my-java-app
+          image: starsinriver/test:v1
           ports:
             - containerPort: 8080

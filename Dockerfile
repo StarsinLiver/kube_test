@@ -1,8 +1,14 @@
-# Base image
-FROM openjdk:17
+# Use a base image with Java runtime
+FROM openjdk:17-jdk-slim
 
-# Copy the JAR file into the container
-COPY build/libs/app.jar /app.jar
+# Set the working directory
+WORKDIR /app
 
-# Set the entry point for the container
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+# Copy the JAR file from the Gradle build
+COPY build/libs/app.jar /app/app.jar
+
+# Expose the port the application runs on
+EXPOSE 8080
+
+# Run the JAR file
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
