@@ -26,6 +26,14 @@ pipeline {
             }
         }
 
+        stage('Make Gradle Wrapper Executable') {
+            steps {
+                script {
+                    sh 'chmod +x ./gradlew'  // Gradle Wrapper에 실행 권한 부여
+                }
+            }
+        }
+        
         stage('Build Gradle Project') {
             steps {
                 script {
