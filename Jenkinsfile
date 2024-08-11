@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven "maven:3.8.1"  // Global Tool Configuration에 정의된 Maven 이름 사용
+        gradle 'Gradle 8.9'  // Global Tool Configuration에 정의된 Gradle 이름 사용
     }
 
     environment {
@@ -26,10 +26,11 @@ pipeline {
             }
         }
 
-        stage('Build Maven Project') {
+        stage('Build Gradle Project') {
             steps {
                 script {
-                    sh 'mvn clean package -DskipTests'
+                    // Gradle 빌드 명령 실행
+                    sh './gradlew clean build -x test'
                 }
             }
         }
@@ -37,6 +38,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
+                    // app.jar 파일을 Docker 이미지에 추가하는 경우를 가정합니다.
+                    // Dockerfile이 현재 디렉토리의 app.jar 파일을 사용하는지 확인합니다.
                     docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
                 }
             }
