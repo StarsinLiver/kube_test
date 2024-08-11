@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'mave:3.8.1'  // Global Tool Configuration에 정의된 Maven 이름 사용
+        maven "maven:3.8.1"  // Global Tool Configuration에 정의된 Maven 이름 사용
     }
 
     environment {
