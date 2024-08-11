@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        gradle 'Gradle 8.9'  // Global Tool Configuration에 정의된 Gradle 이름 사용
+        gradle 'gradle'  // Global Tool Configuration에 정의된 Gradle 이름 사용
     }
 
     environment {
