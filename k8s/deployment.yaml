@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: my-java-app
-          image: starsinriver/test:v1
+          image: starsinriver/test:latest
           ports:
             - containerPort: 8080
