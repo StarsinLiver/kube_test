@@ -28,13 +28,13 @@ public class HelloController {
 //        return "안녕하세요 이것은 1번입니다.";
 //    }
 
-    @GetMapping("/hello2")
-    public String hello2() {
-        System.out.println("2번이다~~~~");
-        return "안녕하세요 이것은 2번입니다.";
-    }
-//    @GetMapping("/hello3")
-//    public String hello3() {
-//        return "안녕하세요 이것은 3번입니다.";
+//    @GetMapping("/hello2")
+//    public String hello2() {
+//        System.out.println("2번이다~~~~");
+//        return "안녕하세요 이것은 2번입니다.";
 //    }
+    @GetMapping("/hello3")
+    public String hello3() {
+        return "안녕하세요 이것은 3번입니다.";
+    }
 }
