@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-deployment3
+  name: my-deployment4
 spec:
   replicas: 1           #  파드 수 정의
   selector:
     matchLabels:
-      app: hello3
+      app: hello4
       version: v1
   template:
     metadata:
       labels:
-        app: hello3
+        app: hello4
         version: v1
     spec:
       containers:

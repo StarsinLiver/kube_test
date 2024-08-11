@@ -33,8 +33,12 @@ public class HelloController {
 //        System.out.println("2번이다~~~~");
 //        return "안녕하세요 이것은 2번입니다.";
 //    }
-    @GetMapping("/hello3")
-    public String hello3() {
-        return "안녕하세요 이것은 3번입니다.";
+//    @GetMapping("/hello3")
+//    public String hello3() {
+//        return "안녕하세요 이것은 3번입니다.";
+//    }
+    @GetMapping("/hello4")
+    public String hello4() {
+        return "안녕하세요 이것은 4번입니다.";
     }
 }
