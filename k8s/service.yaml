@@ -11,4 +11,3 @@ spec:
     - protocol: TCP
       port: 80         # 클러스터 IP에서 접근할 포트
       targetPort: 8080 # 파드의 컨테이너 포트
-      nodePort: 30000  # 노드에서 접근할 포트 (범위: 30000-32767)
