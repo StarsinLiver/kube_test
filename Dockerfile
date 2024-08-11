@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the JAR file from the Gradle build
-COPY build/libs/app.jar /app/app.jar
+COPY build/libs/k82-0.0.1-SNAPSHOT.jar /app/app.jar
 
 # Expose the port the application runs on
 EXPOSE 8080
