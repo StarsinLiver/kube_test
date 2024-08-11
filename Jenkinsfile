@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven 3.8.1'  // Global Tool Configuration에 정의된 Maven 이름 사용
+    }
+
     environment {
         DOCKER_IMAGE = "starsinriver/test"
         DOCKER_TAG = "v1"
@@ -13,6 +17,12 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/StarsinLiver/kube_test.git'
+            }
+        }
+
+        stage('Modify') {
+            steps {
+                writeFile file: 'myfile.txt', text: 'Modified content'
             }
         }
 
